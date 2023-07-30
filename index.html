@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Presentation - MongoDB</title>
+	<meta name="description" content="Understanding the MongoDB NoSQL DBMS">
+	<meta name="author" content="Nick GS">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<img src="./dist/images/mongo-logo.png" alt="MongoDB"/>
+		</section>
+		<section>
+			<h2 style="color: #459c45">What is MongoDB?</h2>
+			<ul>
+				<li>Document-based DBMS</li>
+				<li>Non-relational DBMS</li>
+				<li>Open source</li>
+			</ul>
+		</section>
+		<section>
+			<section>
+				<h2 style="color: #459c45">How data is structured in MongoDB?</h2>
+			</section>
+			<section>
+				<img src="./dist/images/Relationship-diagram.png" alt="Relationship Diagram"/>
+			</section>
+			<section>
+				<img src="./dist/images/SQL-vs-mongodb.png" alt="SQL vs MongoDB"/>
+			</section>
+			<section>
+				<img src="./dist/images/JSON-vs-BSON.png" alt="JSON vs BSON"/>
+			</section>
+			<section>
+				<pre>
+					<code class="hljs java">
+	[
+		{
+			"_id": ObjectId("508d27069cc1ae293b36928d"),
+			"title": "MongoDB",
+			"tags": [
+				"NoSQL",
+				"Database"
+			]
+			"created_date": ISODate("2023-07-25T15:26:45.000Z"),
+			"author_id": ObjectId("498f75404ab4dc753b14567e")
+		}
+	]
+					</code>
+				</pre>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2 style="color: #459c45">How MongoDB differs from competitors?</h2>
+			</section>
+			<section>
+				<img src="./dist/images/cross-platform.jpg" alt="Cross Platform"/>
+			</section>
+			<section>
+				<img src="./dist/images/replica-set-read-write-operations-primary.svg" alt="Replica Set"/>
+			</section>
+			<section>
+				<img src="./dist/images/sharding.png" alt="Sharding"/>
+			</section>
+			<section>
+				<img src="./dist/images/gridfs.png" alt="GridFS"/>
+			</section>
+			<section>
+				<pre>
+					<code class="hljs java">
+	> db.users.insertOne({ name: "John" });
+	> db.users.insertMany();
+	> db.users.find({ age: { $gt: 18 } });
+	> db.users.updateOne();
+	> db.users.updateMany({ age: { $lt: 18 } });
+	> db.users.replaceOne();
+	> db.users.deleteOne();
+	> db.users.deleteMany({ status: "reject"});
+					</code>
+				</pre>
+			</section>
+		</section>
+		<section>
+			<h2 style="color: #459c45">Advantages</h2>
+			<ul>
+				<li>Flexible information storage system</li>
+				<li>Easily scalable databases</li>
+				<li>Many tools for working with Mongo</li>
+				<li>Indexing</li>
+				<li>Run on several servers at once</li>
+			</ul>
+		</section>
+		<section>
+			<h2 style="color: #459c45">Disadvantages</h2>
+			<ul>
+				<li>No stored procedures, triggers and FK</li>
+				<li>No full compliance with ACID</li>
+				<li>Difficulties when working with transactions</li>
+			</ul>
+		</section>
+		<section>
+			<h2 style="color: #459c45">When to Use MongoDB?</h2>
+			<ul>
+				<li>e-Commerce product catalogs</li>
+				<li>Storing events in the system (logging)</li>
+				<li>Record information from monitoring sensors</li>
+				<li>Content management</li>
+				<li>Games</li>
+				<li>Payment systems</li>
+				<li>Mobile applications</li>
+				<li>Caching</li>
+				<li>...and many more where</li>
+			</ul>
+		</section>
+		<section>
+			<h2 style="color: #459c45">Сonclusions</h2>
+			<ul>
+				<li>NoSQL database</li>
+				<li>Works with collections & documents</li>
+				<li>Cross-platform</li>
+				<li>Flexible & scalable</li>
+				<li>Provide fast and reliable programs</li>
+			</ul>
+		</section>
+		<section></section>
+	</div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+
+	// Also available as an ES module, see:
+	// https://revealjs.com/initialization/
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		center: true,
+		hash: true,
+
+		// Learn about plugins: https://revealjs.com/plugins/
+		plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+	});
+
+</script>
+
+</body>
+</html>
